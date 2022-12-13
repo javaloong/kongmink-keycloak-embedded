@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+       http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -7,14 +21,39 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <name>Kongmink keycloak embedded server</name>
+    <description>Keycloak embedded server for java development tests</description>
+    <url>https://github.com/javaloong/kongmink-keycloak-embedded</url>
+    <organization>
+        <name>org.javaloong</name>
+        <url>https://javaloong.org</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>https://github.com/javaloong/kongmink-keycloak-embedded/blob/master/LICENSE</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/javaloong/kongmink-keycloak-embedded</url>
+        <connection>scm:git:https://github.com/javaloong/kongmink-keycloak-embedded.git</connection>
+        <developerConnection>scm:git:https://github.com/javaloong/kongmink-keycloak-embedded.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+    <developers>
+        <developer>
+            <name>tutunannan</name>
+            <email>bd66_6@hotmail.com</email>
+        </developer>
+    </developers>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
+        <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-		<maven.compiler.compilerVersion>${java.version}</maven.compiler.compilerVersion>
+        <maven.compiler.compilerVersion>${java.version}</maven.compiler.compilerVersion>
 
         <assertj.version>3.20.2</assertj.version>
         <awaitility.version>3.1.6</awaitility.version>
@@ -122,29 +161,29 @@
 
     <build>
         <plugins>
-		    <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.3.0</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.3.0</version>
-			</plugin>
             <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-failsafe-plugin</artifactId>
-				<version>2.22.2</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>integration-test</goal>
-							<goal>verify</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.22.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
