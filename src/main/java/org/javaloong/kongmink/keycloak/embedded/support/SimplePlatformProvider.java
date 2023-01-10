@@ -16,6 +16,7 @@
  */
 package org.javaloong.kongmink.keycloak.embedded.support;
 
+import org.keycloak.Config;
 import org.keycloak.platform.PlatformProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -75,5 +76,11 @@ public class SimplePlatformProvider implements PlatformProvider {
 
     public void shutdown() {
         this.shutdownHook.run();
+    }
+
+    @Override
+    public ClassLoader getScriptEngineClassLoader(Config.Scope scriptProviderConfig) {
+        // It is fine to return null as nashorn should be automatically included on the classpath of testsuite utils
+        return null;
     }
 }
